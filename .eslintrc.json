@@ -28,6 +28,8 @@
 		"quotes": "off",
 		"@typescript-eslint/quotes": ["error", "double"],
 		"semi": ["error", "always"],
-		"@typescript-eslint/semi": "off"
-	}
+		"@typescript-eslint/semi": "off",
+		"@typescript-eslint/no-unused-vars": ["warn"]
+	},
+	"ignorePatterns": ["tailwind.config.js", "**/vendor/*.js"]
 }
