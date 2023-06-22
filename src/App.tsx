@@ -18,13 +18,13 @@ function App(): JSX.Element {
 
 			<Routes>
 				<Route path="/" index element={<Home />} />
-				<Route path="/about" index element={<About />} />
-				<Route path="/team" index element={<Team />} />
-				<Route path="/vision" index element={<Vision />} />
-				<Route path="/knowledge" index element={<Knowledge />} />
-				<Route path="/training" index element={<Training />} />
-				<Route path="/faq" index element={<FAQ />} />
-				<Route path="/contact" index element={<Contact />} />
+				<Route path="/about" element={<About />} />
+				<Route path="/team" element={<Team />} />
+				<Route path="/vision" element={<Vision />} />
+				<Route path="/knowledge" element={<Knowledge />} />
+				<Route path="/training" element={<Training />} />
+				<Route path="/faq" element={<FAQ />} />
+				<Route path="/contact" element={<Contact />} />
 			</Routes>
 
 			<Footer />
