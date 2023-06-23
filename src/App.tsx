@@ -25,6 +25,7 @@ function App(): JSX.Element {
 				<Route path="/training" element={<Training />} />
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/contact" element={<Contact />} />
+				<Route path="/*" element={<Home />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>
