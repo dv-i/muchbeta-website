@@ -36,6 +36,25 @@ const navigation = {
 			route: "/contact",
 		},
 	],
+	menu3: [
+		{
+			name: "Discussion Board",
+			href: "#",
+		},
+		{
+			name: "MuchBeta App",
+			href: "#",
+		},
+		{
+			name: "Donate",
+			href: "#",
+		},
+	],
+	legal: [
+		{ name: "Claim", href: "#" },
+		{ name: "Privacy", href: "#" },
+		{ name: "Terms", href: "#" },
+	],
 	social: [
 		{
 			name: "Facebook",
@@ -150,7 +169,7 @@ export default function Example(): JSX.Element {
 					<div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 lg:pl-16">
 						<div className="md:grid md:grid-cols-2 md:gap-8">
 							<div>
-								<h3 className="text-sm font-semibold leading-6 text-gray-900">
+								<h3 className="text-sm invisible font-semibold leading-6 text-gray-900">
 									Menu
 								</h3>
 								<ul role="list" className="mt-6 space-y-4">
@@ -183,6 +202,42 @@ export default function Example(): JSX.Element {
 													{item.name}
 												</div>
 											</NavLink>
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+						<div className="md:grid md:grid-cols-2 md:gap-8">
+							<div>
+								<h3 className="text-sm invisible font-semibold leading-6 text-gray-900">
+									Company
+								</h3>
+								<ul role="list" className="mt-6 space-y-4">
+									{navigation.menu3.map((item) => (
+										<li key={item.name}>
+											<a
+												href={item.href}
+												className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+											>
+												{item.name}
+											</a>
+										</li>
+									))}
+								</ul>
+							</div>
+							<div className="mt-10 md:mt-0">
+								<h3 className="text-sm invisible font-semibold leading-6 text-gray-900">
+									Legal
+								</h3>
+								<ul role="list" className="mt-6 space-y-4">
+									{navigation.legal.map((item) => (
+										<li key={item.name}>
+											<a
+												href={item.href}
+												className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+											>
+												{item.name}
+											</a>
 										</li>
 									))}
 								</ul>

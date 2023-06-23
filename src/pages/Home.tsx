@@ -1,4 +1,4 @@
-import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 import {
 	ChatBubbleLeftRightIcon,
@@ -7,13 +7,8 @@ import {
 	CheckIcon,
 } from "@heroicons/react/20/solid";
 
-// import image1 from "../images/slide-1.png";
-// import image2 from "../images/slide-2.png";
-
-import { useState, Fragment } from "react";
-import { RadioGroup, Popover, Transition } from "@headlessui/react";
-
-import "swiper/css";
+import { useState } from "react";
+import { RadioGroup } from "@headlessui/react";
 
 function Home(): JSX.Element {
 	return (
@@ -62,43 +57,6 @@ function Banner(): JSX.Element {
 	);
 }
 
-function IntroSection(): JSX.Element {
-	return (
-		<div className="bg-teal-700">
-			<div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-				<div className="mx-auto max-w-2xl text-center">
-					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-						Everything you need to get started
-						<br />
-					</h2>
-					<p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-teal-200">
-						A service that connects{" "}
-						<span className="font-bold">writers</span> with{" "}
-						<span className="font-bold">readers</span> from their
-						target audience providing readers with an opportunity to
-						earn money by giving thoughtful feedback and helping
-						writers hone their craft
-					</p>
-					<div className="mt-10 flex items-center justify-center gap-x-6">
-						<a
-							href="#"
-							className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-						>
-							Get started
-						</a>
-						<a
-							href="#"
-							className="text-sm font-semibold leading-6 text-white"
-						>
-							Learn more <span aria-hidden="true">→</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
-}
-
 function JoinSection(): JSX.Element {
 	const features = [
 		{
@@ -129,7 +87,7 @@ function JoinSection(): JSX.Element {
 						Get Started
 					</h2>
 					<p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-						Everything you need to join !
+						Everything you need to join!
 					</p>
 					<p className="mt-6 text-lg leading-8 text-teal-200">
 						Quis tellus eget adipiscing convallis sit sit eget
@@ -216,7 +174,7 @@ function PricingSection(): JSX.Element {
 						Pricing
 					</h2>
 					<p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-						Limited time launch price !
+						Limited time launch price!
 					</p>
 				</div>
 				<p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
