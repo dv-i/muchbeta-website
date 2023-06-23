@@ -39,12 +39,12 @@ const NAVBAR_PAGES = [
 
 export default function Example(): JSX.Element {
 	return (
-		<Disclosure as="nav" className="bg-white shadow">
+		<Disclosure as="nav" className="bg-white z-50 relative">
 			{({ open }) => (
 				<>
 					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 						<div className="relative flex h-16 justify-between">
-							<div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+							<div className="inset-y-0 flex-1 left-0 flex items-center sm:hidden">
 								{/* Mobile menu button */}
 								<Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500">
 									<span className="sr-only">
@@ -97,16 +97,16 @@ export default function Example(): JSX.Element {
 									))}
 								</div>
 							</div>
-							<div className="flex gap-3 inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+							<div className="flex gap-3 inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 								<button
 									type="button"
-									className="rounded-lg bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
+									className="lg:flex hidden rounded-lg bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
 								>
 									Discussion Board
 								</button>
 								<button
 									type="button"
-									className="rounded-lg flex gap-1 bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
+									className="lg:flex hidden rounded-lg flex gap-1 bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
 								>
 									MuchBeta App
 									<DevicePhoneMobileIcon className="h-5 w-5" />

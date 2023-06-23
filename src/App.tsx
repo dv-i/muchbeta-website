@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "./NavBar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/Team";
@@ -15,7 +15,7 @@ function App(): JSX.Element {
 	return (
 		<BrowserRouter>
 			<NavBar />
-
+			<ScrollToTop />
 			<Routes>
 				<Route path="/" index element={<Home />} />
 				<Route path="/about" element={<About />} />
@@ -26,10 +26,19 @@ function App(): JSX.Element {
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/contact" element={<Contact />} />
 			</Routes>
-
 			<Footer />
 		</BrowserRouter>
 	);
+}
+
+function ScrollToTop(): JSX.Element {
+	const { pathname } = useLocation();
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
+
+	return <></>;
 }
 
 export default App;
