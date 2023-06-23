@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-gradient-to-tr{
+    background-image: linear-gradient(to top right, #0D9488, #Ffffff) !important;
+}

@@ -97,7 +97,7 @@ export default function Example(): JSX.Element {
 									))}
 								</div>
 							</div>
-							<div className="flex gap-3 inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+							<div className="flex gap-3 justify-end flex-1 inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 								<button
 									type="button"
 									className="lg:flex hidden rounded-lg bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
