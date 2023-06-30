@@ -30,7 +30,7 @@ function Banner(): JSX.Element {
 		<div className="flex items-center gap-x-6 bg-teal-600 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
 			<p className="text-sm leading-6 text-white">
 				<a href="#">
-					<strong className="font-semibold">MuchBeta</strong>
+					<strong className="font-semibold">muchbeta</strong>
 					<svg
 						viewBox="0 0 2 2"
 						className="mx-2 inline h-0.5 w-0.5 fill-current"
@@ -74,7 +74,7 @@ function JoinSection(): JSX.Element {
 		{
 			name: "Discuss",
 			description:
-				"Join our discussion board and help shape the future of MuchBeta!",
+				"Join our discussion board and help shape the future of muchbeta!",
 			href: "#",
 			icon: ChatBubbleLeftRightIcon,
 		},
@@ -83,11 +83,11 @@ function JoinSection(): JSX.Element {
 		<div className="bg-teal-700 py-24 lg:py-12 sm:py-32">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:text-center">
-					<h2 className="text-base font-semibold leading-7 text-white">
+					{/* <h2 className="text-base font-semibold leading-7 text-white">
 						Get Started
-					</h2>
+					</h2> */}
 					<p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-						Everything you need to join!
+						Let's Get Started
 					</p>
 					<p className="mt-6 text-lg leading-8 text-teal-200">
 						Quis tellus eget adipiscing convallis sit sit eget
@@ -125,7 +125,6 @@ function classNames(...classes: string[]): string {
 }
 
 const frequencies = [
-	{ value: "monthly", label: "Monthly", priceSuffix: "/month" },
 	{ value: "annually", label: "Annually", priceSuffix: "/year" },
 ];
 
@@ -134,31 +133,38 @@ const tiers = [
 		name: "Writer",
 		id: "tier-writer",
 		href: "#",
-		price: { monthly: "$15", annually: "$120" },
-		description: "The essentials to provide your best work for clients.",
-		features: ["5 products"],
+		price: { annually: "$25" },
+		description:
+			"Leverage our sophisticated algorithm to blind match with your ideal target audience.",
+		features: [
+			"Unlimited Projects",
+			"Upload Chapter By Chapter",
+			"Choose Your Desired Demographics",
+		],
 		mostPopular: false,
 	},
 	{
 		name: "Reader",
 		id: "tier-reader",
 		href: "#",
-		price: { monthly: "$35", annually: "$360" },
-		description: "A plan that scales with your rapidly growing business.",
-		features: ["25 products", "Up to 10,000 subscribers"],
+		price: { annually: "$45" },
+		description:
+			"Enjoy a flexible, meaningful side hustle you can do in your pajamas or at the beach.",
+		features: [
+			"Choose Your Genres",
+			"Preview Jobs Before Accepting",
+			"Earn $0.0008 per word",
+		],
 		mostPopular: false,
 	},
 	{
 		name: "Both",
 		id: "tier-both",
 		href: "#",
-		price: { monthly: "$45", annually: "$480" },
-		description: "Dedicated support and infrastructure for your company.",
-		features: [
-			"Unlimited products",
-			"Unlimited subscribers",
-			"Advanced analytics",
-		],
+		price: { annually: "$60" },
+		description:
+			"Fund your publishing dreams by getting paid to beta read.",
+		features: ["Join as both a reader and writer."],
 		mostPopular: true,
 	},
 ];
@@ -170,19 +176,18 @@ function PricingSection(): JSX.Element {
 		<div className="bg-gray-900 py-24 sm:py-32">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-4xl text-center">
-					<h2 className="text-base font-semibold leading-7 text-teal-400">
+					{/* <h2 className="text-base font-semibold leading-7 text-teal-400">
 						Pricing
-					</h2>
+					</h2> */}
 					<p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-						Limited time launch price!
+						Limited Time Launch Price!
 					</p>
 				</div>
 				<p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-300">
-					Choose an affordable plan that’s packed with the best
-					features for engaging your audience, creating customer
-					loyalty, and driving recognition.
+					Secure your membership for a full year at this exclusive
+					rate.
 				</p>
-				<div className="mt-16 flex justify-center">
+				{/* <div className="mt-16 flex justify-center">
 					<RadioGroup
 						value={frequency}
 						onChange={setFrequency}
@@ -206,7 +211,7 @@ function PricingSection(): JSX.Element {
 							</RadioGroup.Option>
 						))}
 					</RadioGroup>
-				</div>
+				</div> */}
 				<div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 					{tiers.map((tier) => (
 						<div
@@ -236,9 +241,7 @@ function PricingSection(): JSX.Element {
 							</p>
 							<p className="mt-6 flex items-baseline gap-x-1">
 								<span className="text-4xl font-bold tracking-tight text-white">
-									{frequency.value === "monthly"
-										? tier.price.monthly
-										: tier.price.annually}
+									{tier.price.annually}
 								</span>
 								<span className="text-sm font-semibold leading-6 text-gray-300">
 									{frequency.priceSuffix}
@@ -254,7 +257,7 @@ function PricingSection(): JSX.Element {
 									"mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
 								)}
 							>
-								Buy plan
+								Subscribe
 							</a>
 							<ul
 								role="list"
@@ -339,7 +342,7 @@ function LandingSection(): JSX.Element {
 										What is
 									</span>
 									<span className="block text-teal-600">
-										MuchBeta ?
+										muchbeta ?
 									</span>
 								</span>
 							</h1>
@@ -494,11 +497,11 @@ function BlogSection(): JSX.Element {
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-						From the blog
+						From The Blog
 					</h2>
-					<p className="mt-2 text-lg leading-8 text-gray-600">
+					{/* <p className="mt-2 text-lg leading-8 text-gray-600">
 						Checkout our most recent articles and newletters
-					</p>
+					</p> */}
 				</div>
 				<div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 					{posts.map((post) => (
@@ -555,10 +558,10 @@ function NewsLetterSection(): JSX.Element {
 			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
 				<div className="max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:col-span-7">
 					<h2 className="inline sm:block lg:inline xl:block">
-						Want more news and updates?
+						This is just the beginning!
 					</h2>{" "}
-					<p className="inline sm:block lg:inline xl:block">
-						Sign up for our newsletter.
+					<p className="mt-2 text-lg leading-8 text-white">
+						Be the first to know. Sign up for news and updates.
 					</p>
 				</div>
 				<form className="w-full max-w-md lg:col-span-5 lg:pt-2">
