@@ -22,8 +22,8 @@ const NAVBAR_PAGES = [
 		route: "/vision",
 	},
 	{
-		name: "Knowledge",
-		route: "/knowledge",
+		name: "Learn",
+		route: "/learn",
 	},
 	{
 		name: "Training",

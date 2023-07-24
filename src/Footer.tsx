@@ -19,8 +19,8 @@ const navigation = {
 			route: "/vision",
 		},
 		{
-			name: "Knowledge",
-			route: "/knowledge",
+			name: "Learn",
+			route: "/learn",
 		},
 	],
 	menu2: [

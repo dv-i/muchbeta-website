@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-export default function Knowledge(): JSX.Element {
+export default function Learn(): JSX.Element {
 	return (
 		<main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
 			<div className="text-center">

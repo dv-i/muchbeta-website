@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import Vision from "./pages/Vision";
-import Knowledge from "./pages/Knowledge";
+import Learn from "./pages/Learn";
 import Training from "./pages/Training";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
@@ -21,7 +21,7 @@ function App(): JSX.Element {
 				<Route path="/about" element={<About />} />
 				<Route path="/team" element={<Team />} />
 				<Route path="/vision" element={<Vision />} />
-				<Route path="/knowledge" element={<Knowledge />} />
+				<Route path="/Learn" element={<Learn />} />
 				<Route path="/training" element={<Training />} />
 				<Route path="/faq" element={<FAQ />} />
 				<Route path="/contact" element={<Contact />} />

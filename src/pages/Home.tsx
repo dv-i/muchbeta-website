@@ -561,7 +561,7 @@ function NewsLetterSection(): JSX.Element {
 						This is just the beginning!
 					</h2>{" "}
 					<p className="mt-2 text-lg leading-8 text-white">
-						Be the first to know. Sign up for news and updates.
+						Sign up for news and updates.
 					</p>
 				</div>
 				<form className="w-full max-w-md lg:col-span-5 lg:pt-2">
