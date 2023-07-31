@@ -6,7 +6,7 @@ import {
 import { gradientColor } from "../data";
 import { NavLink } from "react-router-dom";
 
-export default function Training(): JSX.Element {
+export default function Join(): JSX.Element {
 	return (
 		<div className="relative isolate overflow-hidden bg-white py-24 sm:py-32">
 			<div
@@ -27,8 +27,11 @@ export default function Training(): JSX.Element {
 						Training workflow
 					</h1>
 					<p className="mt-6 text-xl leading-8 text-gray-700">
-						We offer training to ensure that our members bring value
-						to the community.
+						We're committed to nurturing a community centered around
+						continual growth, constructive criticism, and respect.
+						Our training program will evolve with member needs and
+						industry trends, with regular updates ensuring all
+						participants remain informed and current.
 					</p>
 				</div>
 				<div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-10 lg:max-w-none lg:grid-cols-12">
@@ -57,12 +60,10 @@ export default function Training(): JSX.Element {
 						<figure className="border-l border-teal-600 pl-8">
 							<blockquote className="text-xl font-semibold leading-8 tracking-tight text-gray-900">
 								<p>
-									“Muchbeta's training is a game-changer! From
-									guiding readers to provide constructive
-									criticism to helping writers refine their
-									work, they foster a supportive village where
-									everyone thrives. Joining this dedicated
-									platform has been an empowering experience!”
+									At Muchbeta, we align our success with
+									yours. That means you will only be charged
+									for the training if you successfully
+									complete and pass the program.
 								</p>
 							</blockquote>
 							<figcaption className="mt-8 flex gap-x-4">
@@ -81,10 +82,6 @@ export default function Training(): JSX.Element {
 						</figure>
 					</div>
 					<div className="max-w-xl text-base leading-7 text-gray-700 lg:col-span-7">
-						<p>
-							Providing training is fundamental to our philosophy
-							of supporting everyone in our village.
-						</p>
 						<ul
 							role="list"
 							className="mt-8 max-w-xl space-y-8 text-gray-600"
@@ -98,11 +95,11 @@ export default function Training(): JSX.Element {
 									<strong className="font-semibold text-gray-900">
 										Best Practices.
 									</strong>{" "}
-									Our training modules are designed to promote
-									best practices for Readers to provide
-									constructive criticism and for Writers to be
-									able to filter through feedback to create a
-									better product.
+									Our training modules promote best practices
+									for constructive interaction within the
+									community. They guide Readers in offering
+									valuable criticism and assist Writers in
+									synthesizing feedback effectively.
 								</span>
 							</li>
 							<li className="flex gap-x-3">
@@ -112,15 +109,17 @@ export default function Training(): JSX.Element {
 								/>
 								<span>
 									<strong className="font-semibold text-gray-900">
-										Multiple Choice Trainings.
+										Reader Training
 									</strong>{" "}
-									Our trainings are designed to screen for
+									Our training is designed to screen for
 									readers who can provide quality feedback and
 									who are committed to supporting writers in
-									their efforts. Readers will submit a written
-									sample of work based on our prompts to
-									demonstrate their ability to provide
-									valuable feedback.
+									their efforts. It includes multiple-choice
+									questions and a written sample submission
+									based on our prompts, designed to showcase
+									the Reader's ability to provide insightful
+									feedback. Each submission is personally
+									evaluated by our team.
 								</span>
 							</li>
 							<li className="flex gap-x-3">
@@ -130,22 +129,34 @@ export default function Training(): JSX.Element {
 								/>
 								<span>
 									<strong className="font-semibold text-gray-900">
-										Writer Trainings.
+										Writer Training
 									</strong>{" "}
-									Trainings for writers look to support them
-									as they review feedback and revise their
-									work to produce writing that is ready to be
-									published. Writers will need to demonstrate
-									their understanding of reviewing readers and
-									community rules.
+									Training for writers prepares them to
+									navigate the app and appropriately review
+									feedback. Writers will also answer
+									multiple-choice questions and provide a
+									written sample that demonstrates their
+									understanding of how to appropriately rate
+									readers and adhere to community rules. Each
+									submission is personally evaluated by our
+									team as well.
 								</span>
 							</li>
 						</ul>
 						<p className="mt-8">
-							Still, have questions? Check out our{" "}
-							<NavLink to="/faq">
+							At Muchbeta, we align our success with yours. That
+							means you will only be charged for the training if
+							you successfully complete and pass the program.
+							Check out our pricing{" "}
+							<NavLink to="/">
 								<span className="font-bold text-teal-600 underline">
-									FAQ Page
+									here
+								</span>
+							</NavLink>
+							&nbsp;and subscribe for updates{" "}
+							<NavLink to="/learn">
+								<span className="font-bold text-teal-600 underline">
+									here
 								</span>
 							</NavLink>
 							.

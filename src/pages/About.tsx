@@ -57,22 +57,28 @@ function About(): JSX.Element {
 									About us
 								</h2>
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-									Muchbeta is a service that facilitates
-									relationships between readers and writers
-									through a mutually beneficial platform, with
-									the goal of helping our community grow
-									stronger together.
+									Beta reading is a pre-publication practice
+									where selected readers, referred to as 'beta
+									readers', review written works, providing
+									feedback on character engagement, plot
+									clarity, pacing, and immersion. This helps
+									ensure that the work is appealing to its
+									intended audience. This practice, distinct
+									from professional editing, is equally
+									beneficial for fiction and nonfiction pieces
+									alike.
 								</p>
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-									While paying beta readers is a polarizing
-									concept, there is a growing trend that
-									anyone providing a service should be
-									appropriately compensated for their time and
-									effort. Paying readers and holding them
-									accountable through a review system with
-									built-in features such as time limits and
-									prompts, has shown to improve commitment and
-									quality of work.
+									At Muchbeta, we streamline this process with
+									a specialized blind matching algorithm,
+									catering to the writer's desired
+									demographics. It takes into account not only
+									designated genres but also screens for
+									potential trigger warnings. While any
+									content can be evaluated by our adult beta
+									readers, we appropriately filter the
+									materials for our younger readers aged
+									13-17.
 								</p>
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
 									With the self-publishing industry growing
@@ -84,6 +90,54 @@ function About(): JSX.Element {
 									benefits of our app is being able to fund
 									your publishing dreams by being paid to beta
 									read.
+								</p>
+								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+									As a writer, you're encouraged to submit
+									your work, whether it's a rough alpha-level
+									draft, a piece from a beginner seeking to
+									hone their skills, a manuscript from an
+									established writer, and everything in
+									between. After all, collaboration is a
+									common practice among the best in the
+									industry.
+								</p>
+
+								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+									You can submit your work to any number of
+									beta readers, either in its entirety or
+									chapter-by-chapter, allowing you to
+									continually adapt your work throughout the
+									writing process. As a reader, the feedback
+									deadline is proportional to the length of
+									the work, providing you ample time for a
+									thorough critique while maintaining a timely
+									return for the writer.
+								</p>
+
+								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+									To ensure the highest quality of
+									interaction, we mandate a training program
+									for both writers and readers. Writing
+									samples provided by users are individually
+									reviewed by a team member, ensuring that
+									everyone understands the expectations and
+									guidelines of our service. This empowers
+									readers to work with clarity and direction
+									ultimately leading to better outcomes for
+									writers.
+								</p>
+
+								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+									Muchbeta isn't just a service—it's a
+									community that nurtures a supportive and
+									encouraging environment, making it an ideal
+									place for writers of all levels, of any
+									objectives. Whether you're seeking a
+									detailed critique to refine your work or a
+									gentle push to keep the creative energy
+									alive, we're here for you. Together, let's
+									champion the power of community and the
+									transformative impact of collective wisdom.
 								</p>
 							</div>
 							<div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
