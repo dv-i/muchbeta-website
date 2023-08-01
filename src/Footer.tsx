@@ -2,7 +2,7 @@
 import { type SVGProps } from "react";
 import { NavLink } from "react-router-dom";
 import { type JSX } from "react/jsx-runtime";
-import mbLogo from "../src/images/mb_logo.png";
+import mbLogo from "../src/images/logo.png";
 
 const navigation = {
 	menu1: [
@@ -19,14 +19,14 @@ const navigation = {
 			route: "/vision",
 		},
 		{
-			name: "Knowledge",
-			route: "/knowledge",
+			name: "Learn",
+			route: "/learn",
 		},
 	],
 	menu2: [
 		{
-			name: "Training",
-			route: "/training",
+			name: "Join",
+			route: "/join",
 		},
 		{
 			name: "FAQ",
@@ -46,10 +46,10 @@ const navigation = {
 			name: "muchbeta App",
 			href: "#",
 		},
-		{
-			name: "Donate",
-			href: "#",
-		},
+		// {
+		// 	name: "Donate",
+		// 	href: "#",
+		// },
 	],
 	legal: [
 		{ name: "Claim", href: "#" },
@@ -151,7 +151,7 @@ export default function Example(): JSX.Element {
 								src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600"
 								alt="Company name"
 							/> */}
-							<img className="h-16" src={mbLogo} alt="muchbeta" />
+							<img className="h-24" src={mbLogo} alt="muchbeta" />
 						</NavLink>
 						<p className="text-sm leading-6 text-gray-600">
 							Daring to do so much better, together.

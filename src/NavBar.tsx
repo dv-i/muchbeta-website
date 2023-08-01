@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import iggLogo from "../src/images/igg_logo.png";
-import mbLogo from "../src/images/mb_logo.png";
+import mbLogo from "../src/images/logo.png";
 
 const NAVBAR_PAGES = [
 	{
@@ -22,12 +22,12 @@ const NAVBAR_PAGES = [
 		route: "/vision",
 	},
 	{
-		name: "Knowledge",
-		route: "/knowledge",
+		name: "Learn",
+		route: "/learn",
 	},
 	{
-		name: "Training",
-		route: "/training",
+		name: "Join",
+		route: "/join",
 	},
 	{
 		name: "FAQ",
@@ -71,14 +71,12 @@ export default function Example(): JSX.Element {
 									className="flex flex-shrink-0 items-center"
 								>
 									<img
-										className="block h-16 w-auto lg:hidden"
-										// src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600"
+										className="block h-10 w-auto lg:hidden"
 										src={mbLogo}
 										alt="Much Beta"
 									/>
 									<img
-										className="hidden h-16 w-auto lg:block"
-										// src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600"
+										className="hidden h-10 w-auto lg:block"
 										src={mbLogo}
 										alt="Much Beta"
 									/>
@@ -102,30 +100,34 @@ export default function Example(): JSX.Element {
 								</div>
 							</div>
 							<div className="flex gap-3 justify-end flex-1 inset-y-0 right-0 items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-								<button
+								<a
+									href="/join"
 									type="button"
 									className="lg:flex hidden rounded-lg bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
 								>
 									Discussion Board
-								</button>
-								<button
+								</a>
+								<a
+									href="/join"
 									type="button"
 									className="lg:flex hidden rounded-lg flex gap-1 bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
 								>
 									muchbeta App
 									<DevicePhoneMobileIcon className="h-5 w-5" />
-								</button>
+								</a>
 								{/* <button
 									type="button"
 									className="rounded-full bg-teal-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
 								>
 									Donate
 								</button> */}
-								<img
-									src={iggLogo}
-									width={100}
-									height={"auto"}
-								/>
+								<a href="/learn">
+									<img
+										src={iggLogo}
+										width={100}
+										height={"auto"}
+									/>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -153,6 +155,44 @@ export default function Example(): JSX.Element {
 									</NavLink>
 								</Disclosure.Button>
 							))}
+
+							<Disclosure.Button
+								as="a"
+								href="#"
+								className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+							>
+								<NavLink
+									to={"/join"}
+									className={({ isActive }) =>
+										`${
+											isActive
+												? "border-teal-500 bg-teal-50 text-teal-700"
+												: "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+										} block border-l-4 py-2 pl-3 pr-4 text-base font-medium`
+									}
+								>
+									Discussion Board
+								</NavLink>
+							</Disclosure.Button>
+
+							<Disclosure.Button
+								as="a"
+								href="#"
+								className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+							>
+								<NavLink
+									to={"/join"}
+									className={({ isActive }) =>
+										`${
+											isActive
+												? "border-teal-500 bg-teal-50 text-teal-700"
+												: "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+										} block border-l-4 py-2 pl-3 pr-4 text-base font-medium`
+									}
+								>
+									muchbeta App
+								</NavLink>
+							</Disclosure.Button>
 						</div>
 					</Disclosure.Panel>
 				</>

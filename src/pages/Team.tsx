@@ -1,12 +1,11 @@
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
-
+import photo1 from "../images/julia_photo.jpeg";
 const people = [
 	{
 		name: "Julia Durnin",
 		role: "Founder / CEO",
-		imageUrl:
-			"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-		bio: "Chronic illness survivor turned author, creating flexible, purposeful jobs and fostering connection in our isolating society, integrating psychology, organizational leadership, and user experience.",
+		imageUrl: photo1,
+		bio: "Founder / President As a tortured artist, it's been a tough lesson to learn that seeking out help doesn't diminish our skills; it amplifies them. Embracing support and collective wisdom enhances our own vision, better enabling us to shine. Together, I'm confident we can surpass expectations while fostering meaningful connections–transforming the so often lonely pilgrimage of creativity–into a spirited caravan.",
 		twitterUrl: "#",
 		linkedinUrl: "#",
 	},
@@ -27,33 +26,44 @@ export default Team;
 function TeamSection(): JSX.Element {
 	return (
 		<div className="bg-white py-24 md:py-32">
-			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-7">
-				<div className="max-w-2xl xl:col-span-4">
+			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-8">
+				<div className="max-w-2xl xl:col-span-4 ">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 						About the team
 					</h2>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
-						Hi! I'm an aspiring author on a mission to create jobs
-						that are flexible and purposeful and that foster
-						connection in our ever-isolating society. As someone who
-						has lived with chronic illness from a young age, I
-						struggled to keep up with the increasing demands of
-						society. My degree in Psychology and minor in
-						Organizational Leadership led me on a journey to
-						understand that people feel valued when their work
-						enhances their quality of life.
+						Hi! I'm Julia, an aspiring author on a mission to create
+						jobs that are flexible, purposeful, and that foster
+						connection in our ever-isolating world. As someone who
+						has battled with chronic illness from a very young age,
+						I struggled to keep up with the increasing demands of
+						society. Carving a path for myself has meant thinking
+						outside of the box, and I'm determined to create a
+						workplace that embraces innovation and nurtures
+						inclusion. <br />
+						<br />
+						My background in Psychology and Organizational
+						Leadership has helped me understand how people feel
+						valued when their unique contributions are recognized,
+						while their growth and well-being are prioritized,
+						within a supportive and transparent environment that
+						encourages open and honest communication.
 					</p>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
-						My prior studies in Visual Communication has also helped
-						me to understand the importance of our users experience
-						and needs. I am determined to continue improving this
-						app in our collective vision. You can read more about my
-						vision for the future of this platform here.
+						Additionally, my background in Visual Communications has
+						instilled in me the importance of our users' experience
+						and understanding their needs. I'm excited to continue
+						improving this service in our collective vision. You can
+						read more about the future of this platform{" "}
+						<a href="/vision" className="underline">
+							here
+						</a>
+						.
 					</p>
 				</div>
 				<ul
 					role="list"
-					className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3"
+					className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-4"
 				>
 					{people.map((person) => (
 						<li
@@ -61,7 +71,7 @@ function TeamSection(): JSX.Element {
 							className="flex flex-col gap-10 pt-12 sm:flex-row"
 						>
 							<img
-								className="aspect-[4/5] w-52 h-80 flex-none rounded-2xl object-cover"
+								className="w-64 h-72 flex-none rounded-2xl object-cover"
 								src={person.imageUrl}
 								alt=""
 							/>
