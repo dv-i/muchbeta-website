@@ -72,13 +72,11 @@ export default function Example(): JSX.Element {
 								>
 									<img
 										className="block h-10 w-auto lg:hidden"
-										// src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600"
 										src={mbLogo}
 										alt="Much Beta"
 									/>
 									<img
 										className="hidden h-10 w-auto lg:block"
-										// src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600"
 										src={mbLogo}
 										alt="Much Beta"
 									/>
@@ -157,6 +155,44 @@ export default function Example(): JSX.Element {
 									</NavLink>
 								</Disclosure.Button>
 							))}
+
+							<Disclosure.Button
+								as="a"
+								href="#"
+								className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+							>
+								<NavLink
+									to={"/join"}
+									className={({ isActive }) =>
+										`${
+											isActive
+												? "border-teal-500 bg-teal-50 text-teal-700"
+												: "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+										} block border-l-4 py-2 pl-3 pr-4 text-base font-medium`
+									}
+								>
+									Discussion Board
+								</NavLink>
+							</Disclosure.Button>
+
+							<Disclosure.Button
+								as="a"
+								href="#"
+								className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+							>
+								<NavLink
+									to={"/join"}
+									className={({ isActive }) =>
+										`${
+											isActive
+												? "border-teal-500 bg-teal-50 text-teal-700"
+												: "border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+										} block border-l-4 py-2 pl-3 pr-4 text-base font-medium`
+									}
+								>
+									muchbeta App
+								</NavLink>
+							</Disclosure.Button>
 						</div>
 					</Disclosure.Panel>
 				</>

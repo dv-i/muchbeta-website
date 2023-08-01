@@ -26,8 +26,8 @@ export default Team;
 function TeamSection(): JSX.Element {
 	return (
 		<div className="bg-white py-24 md:py-32">
-			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-7">
-				<div className="max-w-2xl xl:col-span-4">
+			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-8">
+				<div className="max-w-2xl xl:col-span-4 ">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 						About the team
 					</h2>
@@ -63,7 +63,7 @@ function TeamSection(): JSX.Element {
 				</div>
 				<ul
 					role="list"
-					className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3"
+					className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-4"
 				>
 					{people.map((person) => (
 						<li
@@ -71,7 +71,7 @@ function TeamSection(): JSX.Element {
 							className="flex flex-col gap-10 pt-12 sm:flex-row"
 						>
 							<img
-								className="w-52 flex-none rounded-2xl object-cover"
+								className="w-64 h-72 flex-none rounded-2xl object-cover"
 								src={person.imageUrl}
 								alt=""
 							/>

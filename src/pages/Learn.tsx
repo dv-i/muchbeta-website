@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 function NewsLetterSection(): JSX.Element {
 	return (
-		<div className="bg-teal-700 py-16 sm:py-24 lg:py-32">
+		<div className="bg-teal-700 py-16 sm:py-24 lg:py-32 bg">
 			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
 				<div className="max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:col-span-7">
 					<h2 className="inline sm:block lg:inline xl:block">
@@ -51,26 +51,9 @@ function NewsLetterSection(): JSX.Element {
 
 export default function Learn(): JSX.Element {
 	return (
-		<main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+		<main className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8 bg-teal-700">
 			<div className="text-center">
 				<NewsLetterSection />
-				{/* <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-					Watch this space
-				</h1>
-				<p className="mt-6 text-base leading-7 text-gray-600">
-					We promise you, it's worth the wait
-				</p>
-				<div className="mt-10 flex items-center justify-center gap-x-6">
-					<NavLink
-						to="/"
-						className="rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-					>
-						Go back home
-					</NavLink>
-					<a href="#" className="text-sm font-semibold text-gray-900">
-						Contact support <span aria-hidden="true">&rarr;</span>
-					</a>
-				</div> */}
 			</div>
 		</main>
 	);
