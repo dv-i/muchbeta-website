@@ -40,11 +40,11 @@ const navigation = {
 	menu3: [
 		{
 			name: "Discussion Board",
-			href: "#",
+			href: "/join",
 		},
 		{
 			name: "muchbeta App",
-			href: "#",
+			href: "/join",
 		},
 		// {
 		// 	name: "Donate",
