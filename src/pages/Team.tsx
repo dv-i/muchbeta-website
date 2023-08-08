@@ -3,9 +3,9 @@ import photo1 from "../images/julia_photo.jpeg";
 const people = [
 	{
 		name: "Julia Durnin",
-		role: "Founder / CEO",
+		role: "Founder / President",
 		imageUrl: photo1,
-		bio: "Founder / President As a tortured artist, it's been a tough lesson to learn that seeking out help doesn't diminish our skills; it amplifies them. Embracing support and collective wisdom enhances our own vision, better enabling us to shine. Together, I'm confident we can surpass expectations while fostering meaningful connections–transforming the so often lonely pilgrimage of creativity–into a spirited caravan.",
+		bio: "As a tortured artist, it's been a tough lesson to learn that seeking out help doesn't diminish our skills; it amplifies them. Embracing support and collective wisdom enhances our own vision, better enabling us to shine. Together, I'm confident we can surpass expectations while fostering meaningful connections–transforming the so often lonely pilgrimage of creativity–into a spirited caravan.",
 		twitterUrl: "#",
 		linkedinUrl: "#",
 	},
@@ -29,7 +29,7 @@ function TeamSection(): JSX.Element {
 			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-8">
 				<div className="max-w-2xl xl:col-span-4 ">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-						About the team
+						The Team
 					</h2>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
 						Hi! I'm Julia, an aspiring author on a mission to create
@@ -157,11 +157,15 @@ function Example(): JSX.Element {
 						/>
 						<div className="w-full flex-auto">
 							<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-								Join our team
+								Shape the Future with Us
 							</h2>
 							<p className="mt-6 text-lg leading-8 text-gray-300">
-								If you're passionate about helping our village
-								thrive. We are looking for
+								Are you driven to make change? Do you have a
+								passion for disruption? As Muchbeta continues to
+								grow and evolve, we'll be expanding our
+								dedicated team to further nurture our vision and
+								better serve our community. We'll soon be
+								looking for:
 							</p>
 							<ul
 								role="list"

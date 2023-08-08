@@ -41,16 +41,14 @@ export default function Vision(): JSX.Element {
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 						The Vision
 					</h2>
-					<p className="mt-6 text-lg leading-8 text-gray-600">
+					<p className="mt-6 text-xl leading-8 text-gray-600">
 						To revolutionize the landscape of the industry, making
 						it more democratic, inclusive, and rewarding for all.
 						We're not just looking to disrupt the status quo, we're
-						on a mission to reshape it entirely. (this text should
-						be larger than the regular text but smaller than the
-						heading)
+						on a mission to reshape it entirely.
 					</p>
 				</div>
-				<dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+				<dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none">
 					{features.map((feature) => (
 						<div key={feature.name}>
 							<dt className="font-semibold text-gray-900">

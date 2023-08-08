@@ -24,14 +24,27 @@ export default function Join(): JSX.Element {
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:mx-0">
 					<h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-						Training workflow
+						The Training
 					</h1>
 					<p className="mt-6 text-xl leading-8 text-gray-700">
-						We're committed to nurturing a community centered around
-						continual growth, constructive criticism, and respect.
-						Our training program will evolve with member needs and
-						industry trends, with regular updates ensuring all
-						participants remain informed and current.
+						At Muchbeta, we align our success with yours. That means
+						you will only be charged for the{" "}
+						<span className="font-bold">membership</span> if you
+						successfully complete and pass the{" "}
+						<span className="font-bold">training</span>. Check out
+						our pricing{" "}
+						<NavLink to="/">
+							<span className="font-bold text-teal-600 underline">
+								here
+							</span>
+						</NavLink>
+						&nbsp;and subscribe for updates{" "}
+						<NavLink to="/learn">
+							<span className="font-bold text-teal-600 underline">
+								here
+							</span>
+						</NavLink>
+						.
 					</p>
 				</div>
 				<div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-10 lg:max-w-none lg:grid-cols-12">
@@ -143,24 +156,6 @@ export default function Join(): JSX.Element {
 								</span>
 							</li>
 						</ul>
-						<p className="mt-8">
-							At Muchbeta, we align our success with yours. That
-							means you will only be charged for the training if
-							you successfully complete and pass the program.
-							Check out our pricing{" "}
-							<NavLink to="/">
-								<span className="font-bold text-teal-600 underline">
-									here
-								</span>
-							</NavLink>
-							&nbsp;and subscribe for updates{" "}
-							<NavLink to="/learn">
-								<span className="font-bold text-teal-600 underline">
-									here
-								</span>
-							</NavLink>
-							.
-						</p>
 					</div>
 				</div>
 			</div>

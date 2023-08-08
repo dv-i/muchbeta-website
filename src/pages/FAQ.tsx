@@ -1,6 +1,11 @@
 import { Disclosure } from "@headlessui/react";
-import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
+import {
+	MinusSmallIcon,
+	PlusSmallIcon,
+	MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 import { gradientColor } from "../data";
+import { useState } from "react";
 
 const aboutFAQs = [
 	{
@@ -44,10 +49,6 @@ const startedFAQs = [
 ];
 
 const paymentFAQs = [
-	{
-		question: "What is Muchbeta?",
-		answer: "Muchbeta is an innovative service that connects writers with beta readers from their target audience. Writers get the valuable feedback they need to hone their craft, while readers earn money for their thoughtful insights.",
-	},
 	{
 		question: "How much does it cost?",
 		answer: "Writer’s - TBD. Reader’s - The launch price offers reader’s a one time community fee of $49 guaranteed for the whole year.",
@@ -158,6 +159,18 @@ const careerFAQs = [
 	},
 ];
 export default function FAQ(): JSX.Element {
+	const [searchQuery, setSearchQuery] = useState<string>("");
+	const filterFAQs = (
+		faqList: { question: string; answer: string }[]
+	): { question: string; answer: string }[] => {
+		if (searchQuery === "") {
+			return faqList;
+		}
+
+		return faqList.filter((faq) =>
+			faq.question.toLowerCase().includes(searchQuery.toLowerCase())
+		);
+	};
 	return (
 		<div className="isolate bg-white px-6 py- sm:py-32 lg:px-8">
 			<div
@@ -176,533 +189,589 @@ export default function FAQ(): JSX.Element {
 				<h2 className="mx-auto max-w-4xl text-2xl font-bold leading-10 tracking-tight text-gray-900">
 					Frequently asked questions
 				</h2>
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					About Muchbeta
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{aboutFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
+				<div className="relative mt-8">
+					<input
+						type="text"
+						placeholder="Search FAQs..."
+						className="w-full pl-10 pr-4 py-2 rounded-lg border border-teal-500 border-solid border-1"
+						value={searchQuery}
+						onChange={(e) => {
+							setSearchQuery(e.target.value);
+						}}
+					/>
+					<MagnifyingGlassIcon className="absolute w-6 h-6 text-gray-400 left-3 top-3" />
 				</div>
+				{searchQuery && filterFAQs(aboutFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							About Muchbeta
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(aboutFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Getting Started
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{startedFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(startedFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Getting Started
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(startedFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Cost & Payment
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{paymentFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(paymentFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Cost & Payment
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(paymentFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Quality & Satisfaction
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{qualityFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(qualityFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Quality & Satisfaction
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(qualityFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Content & Generes
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{contentFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(contentFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Content & Generes
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(contentFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Troubles & Disputes
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{troubleFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(troubleFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Troubles & Disputes
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(troubleFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Platform & Technology
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{platformFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(platformFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Platform & Technology
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(platformFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Participation & Jobs
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{jobsFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(jobsFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Participation & Jobs
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(jobsFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Feedback & Improvements
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{feedbackFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(feedbackFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Feedback & Improvements
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(feedbackFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Languages & Location
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{languageFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(languageFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Languages & Location
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(languageFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 
-				<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
-					Careers at Muchbeta
-				</h4>
-				<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
-					<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
-						{careerFAQs.map((faq) => (
-							<Disclosure
-								as="div"
-								key={faq.question}
-								className="pt-6"
-							>
-								{({ open }) => (
-									<>
-										<dt>
-											<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-												<span className="text-base font-semibold leading-7">
-													{faq.question}
-												</span>
-												<span className="ml-6 flex h-7 items-center">
-													{open ? (
-														<MinusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													) : (
-														<PlusSmallIcon
-															className="h-6 w-6"
-															aria-hidden="true"
-														/>
-													)}
-												</span>
-											</Disclosure.Button>
-										</dt>
-										<Disclosure.Panel
-											as="dd"
-											className="mt-2 pr-12"
-										>
-											<p className="text-base leading-7 text-gray-600">
-												{faq.answer}
-											</p>
-										</Disclosure.Panel>
-									</>
-								)}
-							</Disclosure>
-						))}
-					</dl>
-				</div>
+				{searchQuery && filterFAQs(careerFAQs).length === 0 ? null : (
+					<>
+						<h4 className="max-w-4xl mx-auto pt-20 text-xl font-bold leading-10 tracking-tight text-teal-600">
+							Careers at Muchbeta
+						</h4>
+						<div className="mx-auto max-w-4xl divide-y divide-gray-900/10">
+							<dl className="pt-5 space-y-6 divide-y divide-gray-900/10">
+								{filterFAQs(careerFAQs).map((faq) => (
+									<Disclosure
+										as="div"
+										key={faq.question}
+										className="pt-6"
+									>
+										{({ open }) => (
+											<>
+												<dt>
+													<Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
+														<span className="text-base font-semibold leading-7">
+															{faq.question}
+														</span>
+														<span className="ml-6 flex h-7 items-center">
+															{open ? (
+																<MinusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															) : (
+																<PlusSmallIcon
+																	className="h-6 w-6"
+																	aria-hidden="true"
+																/>
+															)}
+														</span>
+													</Disclosure.Button>
+												</dt>
+												<Disclosure.Panel
+													as="dd"
+													className="mt-2 pr-12"
+												>
+													<p className="text-base leading-7 text-gray-600">
+														{faq.answer}
+													</p>
+												</Disclosure.Panel>
+											</>
+										)}
+									</Disclosure>
+								))}
+							</dl>
+						</div>
+					</>
+				)}
 			</div>
 		</div>
 	);

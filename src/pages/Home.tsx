@@ -342,7 +342,7 @@ function LandingSection(): JSX.Element {
 										What is
 									</span>
 									<span className="block text-teal-600">
-										muchbeta ?
+										Muchbeta ?
 									</span>
 								</span>
 							</h1>

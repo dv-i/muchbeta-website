@@ -54,7 +54,7 @@ function About(): JSX.Element {
 						<div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-top">
 							<div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
 								<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-									About us
+									About Us
 								</h2>
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
 									Beta reading is a pre-publication practice

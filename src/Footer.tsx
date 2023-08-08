@@ -40,7 +40,7 @@ const navigation = {
 	menu3: [
 		{
 			name: "Discussion Board",
-			href: "/join",
+			href: "/learn",
 		},
 		{
 			name: "muchbeta App",
@@ -154,7 +154,7 @@ export default function Example(): JSX.Element {
 							<img className="h-24" src={mbLogo} alt="muchbeta" />
 						</NavLink>
 						<p className="text-sm leading-6 text-gray-600">
-							Daring to do so much better, together.
+							So much better!
 						</p>
 						<div className="flex space-x-6">
 							{navigation.social.map((item) => (

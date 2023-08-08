@@ -101,7 +101,7 @@ export default function Example(): JSX.Element {
 							</div>
 							<div className="flex gap-3 justify-end flex-1 inset-y-0 right-0 items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 								<a
-									href="/join"
+									href="/learn"
 									type="button"
 									className="lg:flex hidden rounded-lg bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
 								>
@@ -162,7 +162,7 @@ export default function Example(): JSX.Element {
 								className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
 							>
 								<NavLink
-									to={"/join"}
+									to={"/learn"}
 									className={({ isActive }) =>
 										`${
 											isActive
