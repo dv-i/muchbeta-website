@@ -57,74 +57,67 @@ function About(): JSX.Element {
 									About Us
 								</h2>
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-									Beta reading is a pre-publication practice
-									where selected readers, referred to as 'beta
+									Muchbeta is a service that matches writers
+									with beta readers catered specifically to
+									the desired demographics for a project. Beta
+									reading is a pre-publication practice where
+									selected readers, referred to as 'beta
 									readers', review written works, providing
 									feedback on character engagement, plot
 									clarity, pacing, and immersion. This helps
 									ensure that the work is appealing to its
-									intended audience. This practice, distinct
-									from professional editing, is equally
-									beneficial for fiction and nonfiction pieces
-									alike.
+									intended audience, and though distinct from
+									professional editing, is equally beneficial
+									for fiction and nonfiction pieces alike.
 								</p>
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-									At Muchbeta, we streamline this process with
-									a specialized blind matching algorithm,
-									catering to the writer's desired
-									demographics. It takes into account not only
-									designated genres but also screens for
-									potential trigger warnings. While any
-									content can be evaluated by our adult beta
-									readers, we appropriately filter the
-									materials for our younger readers aged
-									13-17.
-								</p>
-								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-									With the self-publishing industry growing
-									exponentially, writers are beginning to see
-									the value in having someone from their
-									target audience provide helpful feedback.
-									And while our budgets are often limited for
-									pursuing our dreams, one of the many
-									benefits of our app is being able to fund
-									your publishing dreams by being paid to beta
-									read.
-								</p>
-								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-									As a writer, you're encouraged to submit
-									your work, whether it's a rough alpha-level
-									draft, a piece from a beginner seeking to
-									hone their skills, a manuscript from an
-									established writer, and everything in
+									The Muchbeta blind matching algorithm takes
+									into account designated genres and intended
+									audiences and gives writers the opportunity
+									to receive quality feedback from real
+									readers. With the self-publishing industry
+									growing exponentially, writers are beginning
+									to see the value in having someone from
+									their target audience provide helpful
+									feedback. As a writer, you're encouraged to
+									submit your work, whether it's a rough
+									alpha-level draft, a piece from a beginner
+									seeking to hone their skills, a manuscript
+									from an established writer, or anything in
 									between. After all, collaboration is a
 									common practice among the best in the
 									industry.
 								</p>
-
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-									You can submit your work to any number of
-									beta readers, either in its entirety or
-									chapter-by-chapter, allowing you to
-									continually adapt your work throughout the
-									writing process. As a reader, the feedback
-									deadline is proportional to the length of
-									the work, providing you ample time for a
+									Beta readers with Muchbeta are compensated
+									by word and provided with ample time for a
 									thorough critique while maintaining a timely
-									return for the writer.
+									return for the writer. The chance to earn
+									extra income all while reading is an
+									exciting opportunity for readers in all
+									genres, ensuring that Muchbeta can match
+									writers of any genre with quality sample
+									readers. And because our budgets are often
+									limited when pursuing our dreams, one of the
+									many benefits of our app is being able to
+									participate as both a writer and a reader
+									and fund your publishing dreams by being
+									paid to beta read.
 								</p>
-
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
 									To ensure the highest quality of
 									interaction, we mandate a training program
-									for both writers and readers. Writing
-									samples provided by users are individually
-									reviewed by a team member, ensuring that
-									everyone understands the expectations and
-									guidelines of our service. This empowers
-									readers to work with clarity and direction
-									ultimately leading to better outcomes for
-									writers.
+									for both writers and readers to promote a
+									full understanding of the expectations and
+									guidelines of our service. Multiple choice
+									questions and writing samples that are
+									individually reviewed by muchbeta team
+									members allow all writers and readers to
+									know they will be working with individuals
+									who are working toward the same goals. This
+									empowers readers to work with clarity and
+									direction ultimately leading to better
+									outcomes for writers.
 								</p>
 
 								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
@@ -135,9 +128,15 @@ function About(): JSX.Element {
 									objectives. Whether you're seeking a
 									detailed critique to refine your work or a
 									gentle push to keep the creative energy
-									alive, we're here for you. Together, let's
-									champion the power of community and the
-									transformative impact of collective wisdom.
+									alive, we're here for you.
+								</p>
+
+								<p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+									Together, we can surpass expectations while
+									fostering meaningful
+									connections–transforming the so often lonely
+									pilgrimage of creativity–into a spirited
+									caravan.
 								</p>
 							</div>
 							<div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">

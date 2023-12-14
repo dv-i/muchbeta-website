@@ -22,8 +22,8 @@ const NAVBAR_PAGES = [
 		route: "/vision",
 	},
 	{
-		name: "Learn",
-		route: "/learn",
+		name: "Articles",
+		route: "/articles",
 	},
 	{
 		name: "Join",
@@ -112,7 +112,7 @@ export default function Example(): JSX.Element {
 									type="button"
 									className="lg:flex hidden rounded-lg flex gap-1 bg-teal-50 px-2.5 py-1.5 text-sm font-semibold text-teal-600 shadow-sm hover:bg-teal-100"
 								>
-									muchbeta App
+									Muchbeta App
 									<DevicePhoneMobileIcon className="h-5 w-5" />
 								</a>
 								{/* <button
@@ -190,7 +190,7 @@ export default function Example(): JSX.Element {
 										} block border-l-4 py-2 pl-3 pr-4 text-base font-medium`
 									}
 								>
-									muchbeta App
+									Muchbeta App
 								</NavLink>
 							</Disclosure.Button>
 						</div>

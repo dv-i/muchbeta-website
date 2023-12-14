@@ -19,8 +19,8 @@ const navigation = {
 			route: "/vision",
 		},
 		{
-			name: "Learn",
-			route: "/learn",
+			name: "Articles",
+			route: "/articles",
 		},
 	],
 	menu2: [
@@ -43,7 +43,7 @@ const navigation = {
 			href: "/learn",
 		},
 		{
-			name: "muchbeta App",
+			name: "Muchbeta App",
 			href: "/join",
 		},
 		// {

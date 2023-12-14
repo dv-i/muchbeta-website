@@ -1,15 +1,17 @@
+import { SparklesIcon } from "@heroicons/react/20/solid";
+
 const features = [
 	{
 		name: "Redefining Self-Publishing",
 		innerHTML: true,
 		description:
-			"Today, the self-publishing landscape is dominated by platforms that focus more on quantity than quality, causing exceptional content to get lost in the noise. The traditional publishing path, on the other hand, presents an array of obstacles that deter many talented writers. At <b>MuchBeta</b>, we're determined to change this narrative.",
+			"Today, the self-publishing landscape is dominated by platforms that focus more on quantity than quality, causing exceptional content to get lost in the noise. The traditional publishing path, on the other hand, presents an array of obstacles that deter many talented writers. At MuchBeta, we're determined to change this narrative.",
 	},
 	{
 		name: "A Community-Centric Platform",
 		innerHTML: true,
 		description:
-			"At the heart of <b>muchbeta</b> is the belief that 'it takes a village' to create, refine, and promote a piece of work. We aim to build an integrated community where authors can find support, connect with vetted freelancers, better market to their target demographic while empowering readers to better filter and discover the content that resonates with them. We strive to create a platform where every aspiring author can carve a path to success.",
+			"At the heart of Muchbeta is the belief that 'it takes a village' to create, refine, and promote a piece of work. We aim to build an integrated community where authors can find support, connect with vetted freelancers, better market to their target demographic while empowering readers to better filter and discover the content that resonates with them. We strive to create a platform where every aspiring author can carve a path to success.",
 	},
 	{
 		name: "Nurturing Quality and Creativity",
@@ -42,35 +44,42 @@ export default function Vision(): JSX.Element {
 						The Vision
 					</h2>
 					<p className="mt-6 text-xl leading-8 text-gray-600">
-						To revolutionize the landscape of the industry, making
-						it more democratic, inclusive, and rewarding for all.
-						We're not just looking to disrupt the status quo, we're
-						on a mission to reshape it entirely.
+						Muchbeta looks to revolutionize the landscape of the
+						publishing industry, making it more democratic,
+						inclusive, and rewarding for all. We're not just looking
+						to disrupt the status quo, we're on a mission to reshape
+						it entirely.
 					</p>
 				</div>
 				<dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none">
 					{features.map((feature) => (
-						<div key={feature.name}>
-							<dt className="font-semibold text-gray-900">
-								{feature.name}
-							</dt>
-							{feature.innerHTML === true ? (
-								<dd
-									className="mt-1 text-gray-600"
-									dangerouslySetInnerHTML={{
-										__html: feature.description,
-									}}
-								>
-									{/* {feature.description} */}
-								</dd>
-							) : (
-								<dd className="mt-1 text-gray-600">
-									{feature.description}
-								</dd>
-							)}
-							{/* <dd className="mt-1 text-gray-600">
+						<div className="flex" key={feature.name}>
+							<SparklesIcon
+								className="mt-1 h-5 w-5 flex-none text-teal-600"
+								aria-hidden="true"
+							/>
+							<div className="pl-2">
+								<dt className="font-semibold text-gray-900">
+									{feature.name}
+								</dt>
+								{feature.innerHTML === true ? (
+									<dd
+										className="mt-1 text-gray-600"
+										dangerouslySetInnerHTML={{
+											__html: feature.description,
+										}}
+									>
+										{/* {feature.description} */}
+									</dd>
+								) : (
+									<dd className="mt-1 text-gray-600">
+										{feature.description}
+									</dd>
+								)}
+								{/* <dd className="mt-1 text-gray-600">
 								{feature.description}
 							</dd> */}
+							</div>
 						</div>
 					))}
 				</dl>

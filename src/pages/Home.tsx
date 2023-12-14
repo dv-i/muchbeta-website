@@ -30,7 +30,7 @@ function Banner(): JSX.Element {
 		<div className="flex items-center gap-x-6 bg-teal-600 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
 			<p className="text-sm leading-6 text-white">
 				<a href="#">
-					<strong className="font-semibold">muchbeta</strong>
+					<strong className="font-semibold">Muchbeta</strong>
 					<svg
 						viewBox="0 0 2 2"
 						className="mx-2 inline h-0.5 w-0.5 fill-current"
@@ -61,13 +61,13 @@ function JoinSection(): JSX.Element {
 	const features = [
 		{
 			name: "Sign Up",
-			description: "Sign up and complete a brief training program",
+			description: "Sign up and complete a brief training program.",
 			href: "#",
 			icon: PlusCircleIcon,
 		},
 		{
 			name: "Subscribe",
-			description: "Subscribe for a yearly membership",
+			description: "Subscribe for a yearly membership.",
 			href: "#",
 			icon: NewspaperIcon,
 		},
@@ -347,12 +347,12 @@ function LandingSection(): JSX.Element {
 								</span>
 							</h1>
 							<p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-								A service that connects{" "}
-								<span className="font-bold">writers</span> with{" "}
-								<span className="font-bold">readers</span> from
-								their target audience providing readers with an
-								opportunity to earn money by giving thoughtful
-								feedback and helping writers hone their craft
+								Muchbeta is an innovative service that connects
+								writers with readers from their target audience.
+								Through its blind matching system, beta readers
+								are compensated for providing thoughtful,
+								feedback, helping writers better their work and
+								hone their craft.
 							</p>
 						</div>
 						<div className="relative mt-12 sm:mx-auto sm:max-w-lg lg:col-span-6 lg:mx-0 lg:mt-0 lg:flex lg:max-w-none lg:items-center">

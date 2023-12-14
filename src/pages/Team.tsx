@@ -26,28 +26,32 @@ export default Team;
 function TeamSection(): JSX.Element {
 	return (
 		<div className="bg-white py-24 md:py-32">
-			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-8">
+			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-28 gap-y-20 px-6 lg:px-8 xl:grid-cols-8">
 				<div className="max-w-2xl xl:col-span-4 ">
 					<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 						The Team
 					</h2>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
-						Hi! I'm Julia, an aspiring author on a mission to create
-						jobs that are flexible, purposeful, and that foster
-						connection in our ever-isolating world. As someone who
-						has battled with chronic illness from a very young age,
-						I struggled to keep up with the increasing demands of
-						society. Carving a path for myself has meant thinking
-						outside of the box, and I'm determined to create a
-						workplace that embraces innovation and nurtures
-						inclusion. <br />
+						Hello and welcome to Muchbeta! I'm Julia, an aspiring
+						author on a mission to create jobs that are flexible,
+						purposeful, and that foster connection in our
+						ever-isolating world. As someone who has battled with
+						chronic illness from a very young age, I struggled to
+						keep up with the increasing demands of society. Carving
+						a path for myself has meant thinking outside of the box,
+						and I'm determined to create a workplace that embraces
+						innovation and nurtures inclusion.
+						<br />
 						<br />
 						My background in Psychology and Organizational
 						Leadership has helped me understand how people feel
 						valued when their unique contributions are recognized,
 						while their growth and well-being are prioritized,
 						within a supportive and transparent environment that
-						encourages open and honest communication.
+						encourages open and honest communication. Muchbeta
+						embodies this philosophy at every level, from our
+						organizational culture to the atmosphere we aim to
+						cultivate within the app.
 					</p>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
 						Additionally, my background in Visual Communications has
@@ -63,29 +67,19 @@ function TeamSection(): JSX.Element {
 				</div>
 				<ul
 					role="list"
-					className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-4"
+					className="space-y-12 divide-y divide-gray-200 xl:col-span-4"
 				>
 					{people.map((person) => (
 						<li
 							key={person.name}
 							className="flex flex-col gap-10 pt-12 sm:flex-row"
 						>
-							<img
-								className="w-64 h-72 flex-none rounded-2xl object-cover"
-								src={person.imageUrl}
-								alt=""
-							/>
-							<div className="max-w-xl flex-auto">
-								<h3 className="text-lg font-semibold leading-8 tracking-tight text-gray-900">
-									{person.name}
-								</h3>
-								<p className="text-base leading-7 text-gray-600">
-									{person.role}
-								</p>
-								<p className="mt-6 text-base leading-7 text-gray-600">
-									{person.bio}
-								</p>
-
+							<div className="mt-6">
+								<img
+									className="w-66 h-96 flex-none rounded-2xl object-cover"
+									src={person.imageUrl}
+									alt=""
+								/>
 								<ul role="list" className="mt-6 flex gap-x-6">
 									<li>
 										<a
@@ -128,6 +122,18 @@ function TeamSection(): JSX.Element {
 										</a>
 									</li>
 								</ul>
+							</div>
+
+							<div className="max-w-xl flex-auto">
+								{/* <h3 className="text-lg font-semibold leading-8 tracking-tight text-gray-900">
+									{person.name}
+								</h3>
+								<p className="text-base leading-7 text-gray-600">
+									{person.role}
+								</p>
+								<p className="mt-6 text-base leading-7 text-gray-600">
+									{person.bio}
+								</p> */}
 							</div>
 						</li>
 					))}
