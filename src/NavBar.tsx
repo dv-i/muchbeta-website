@@ -7,6 +7,7 @@ import {
 import { NavLink } from "react-router-dom";
 import iggLogo from "../src/images/igg_logo.png";
 import mbLogo from "../src/images/logo.png";
+import mbLogo2 from "../src/images/logo_2.png";
 
 const NAVBAR_PAGES = [
 	{
@@ -72,12 +73,12 @@ export default function Example(): JSX.Element {
 								>
 									<img
 										className="block h-10 w-auto lg:hidden"
-										src={mbLogo}
+										src={mbLogo2}
 										alt="Much Beta"
 									/>
 									<img
 										className="hidden h-10 w-auto lg:block"
-										src={mbLogo}
+										src={mbLogo2}
 										alt="Much Beta"
 									/>
 								</NavLink>

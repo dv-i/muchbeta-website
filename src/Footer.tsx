@@ -3,6 +3,7 @@ import { type SVGProps } from "react";
 import { NavLink } from "react-router-dom";
 import { type JSX } from "react/jsx-runtime";
 import mbLogo from "../src/images/logo.png";
+import mbLogo2 from "../src/images/logo_2.png";
 
 const navigation = {
 	menu1: [
@@ -151,7 +152,11 @@ export default function Example(): JSX.Element {
 								src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600"
 								alt="Company name"
 							/> */}
-							<img className="h-24" src={mbLogo} alt="muchbeta" />
+							<img
+								className="h-24"
+								src={mbLogo2}
+								alt="muchbeta"
+							/>
 						</NavLink>
 						<p className="text-sm leading-6 text-gray-600">
 							So much better!
