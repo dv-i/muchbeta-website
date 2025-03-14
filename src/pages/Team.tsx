@@ -32,33 +32,51 @@ function TeamSection(): JSX.Element {
 						The Team
 					</h2>
 					<p className="mt-6 text-lg leading-8 text-gray-600">
-						Hello and welcome to Muchbeta! I'm Julia, an aspiring
-						author on a mission to create jobs that are flexible,
-						purposeful, and that foster connection in our
-						ever-isolating world. As someone who has battled with
-						chronic illness from a very young age, I struggled to
-						keep up with the increasing demands of society. Carving
-						a path for myself has meant thinking outside of the box,
-						and I'm determined to create a workplace that embraces
-						innovation and nurtures inclusion.
+						In the dark depths of lockdown, a seed was planted. A
+						seed of frustration with the inherent isolation of the
+						creative process; the yearning for connection, support,
+						and honest feedback. That seed grew into Muchbeta.
 						<br />
 						<br />
-						My background in Psychology and Organizational
-						Leadership has helped me understand how people feel
-						valued when their unique contributions are recognized,
-						while their growth and well-being are prioritized,
-						within a supportive and transparent environment that
-						encourages open and honest communication. Muchbeta
-						embodies this philosophy at every level, from our
-						organizational culture to the atmosphere we aim to
-						cultivate within the app.
-					</p>
-					<p className="mt-6 text-lg leading-8 text-gray-600">
+						Muchbeta isn't just a platform; it's a lifeline for
+						writers seeking quality, timely, feedback and an
+						opportunity for readers to enjoy a flexible, remote side
+						hustle that adds value to their lives in multiple ways.
+						Whether it's through monetary compensation, a sense of
+						community, or a renewed sense of purpose, Muchbeta is
+						here to support and uplift writers and readers alike.
+						<br />
+						<br />
+						I'm determined to create a workplace that embraces
+						innovation and nurtures inclusion. My background in
+						Psychology and Organizational Leadership has helped me
+						understand how people feel valued when their unique
+						contributions are recognized, while their growth and
+						well-being are prioritized, within a supportive and
+						transparent environment that encourages open and honest
+						communication. Muchbeta embodies this philosophy at
+						every level, from our organizational culture to the
+						atmosphere we aim to cultivate within the app.
 						Additionally, my background in Visual Communications has
 						instilled in me the importance of our users' experience
-						and understanding their needs. I'm excited to continue
-						improving this service in our collective vision. You can
-						read more about the future of this platform{" "}
+						and understanding their needs.
+						<br />
+						<br />
+						However, this is just a stepping stone. My current
+						graduate studies in Marketing is starkly highlighting
+						the importance of finding innovative ways to connect
+						with our target audience; our true fans. The traditional
+						follower-based model is being replaced by algorithmic
+						curation, making it harder for creators to build
+						sustainable careers, especially with the rapid
+						advancements in AI and technology creating so much
+						uncertainty. This is the problem I’m ultimately looking
+						to solve, but I can’t do it alone.
+					</p>
+					<p className="mt-6 text-lg leading-8 text-gray-600">
+						Join me and let’s continue improving this service in our
+						collective vision. You can read more about the future of
+						this platform{" "}
 						<a href="/vision" className="underline">
 							here
 						</a>
