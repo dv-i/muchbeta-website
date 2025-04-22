@@ -17,7 +17,7 @@ function Home(): JSX.Element {
 			<LandingSection />
 			<JoinSection />
 			<PricingSection />
-			<BlogSection />
+			{/* <BlogSection /> */}
 			<NewsLetterSection />
 		</div>
 	);
